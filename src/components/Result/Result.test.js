@@ -6,7 +6,7 @@ describe('Result', () => {
 
     beforeEach(() => {
         const resultStub = { sunrise: "0500", sunset: "2200" };
-        wrapper = shallow(<Result />);
+        wrapper = shallow(<Result result={resultStub}/>);
     });
 
     test('it shows the sunrise results', () => {

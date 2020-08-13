@@ -22,7 +22,9 @@ export const getResult = searchTerm => {
 // Helpers
 const fetchLongLat = async searchTerm => {
     try {
-        const resp = await fetch(`https://geocode.xyz/${searchTerm}?json=1`);
+        const proxyURL = 'https://cors-anywhere.herokuapp.com/';
+        const targetURL = `https://geocode.xyz/${searchTerm}?json=1`;
+        const resp = await fetch(proxyURL + targetURL);
         const data = await resp.json();
         return data;
     } catch(err) {

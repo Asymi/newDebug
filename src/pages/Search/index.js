@@ -4,6 +4,10 @@ import { SearchForm, Result } from '../../components';
 import { getResult } from '../../actions';
 
 class Search extends Component {
+    componentDidMount(){
+        this.props.getResult('London')
+    }
+
     getResult = searchTerm => this.props.getResult(searchTerm);
 
     renderResult = () => this.props.loading ? <p>Loading . . .</p> : <Result result={this.props.result}/>
@@ -31,4 +35,4 @@ export const mSTP = state => ({
     error: !state.loading && !state.result.sunrise
 });
 
-export default connect(null, { getResult })(Search);
+export default connect(mSTP, { getResult })(Search);

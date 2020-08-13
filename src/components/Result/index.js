@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-export default function ({ result: { sunrise, sunset } }) {
+export default function ({result: { sunrise, sunset }}) {
     return (
         <section>
         <div id="sunrise">
